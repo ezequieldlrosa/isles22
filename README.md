@@ -17,7 +17,7 @@ Data is organized following the Brain Imaging Data Structure (BIDS; https://bids
 
 A single case-sample is structured as follows:
 ```
-+-- _rawdata
++-- rawdata
 |   +-- sub-strokecase0009
 |       +-- ses-0001
 |           +-- sub-strokecase0009_ses-0001_adc.nii.gz 
@@ -26,7 +26,7 @@ A single case-sample is structured as follows:
 |           +-- sub-strokecase0009_ses-0001_dw.json 
 |           +-- sub-strokecase0009_ses-0001_flair.nii.gz
 |           +-- sub-strokecase0009_ses-0001_flair.json
-+-- _derivatives
++-- derivatives
 |   +-- sub-strokecase0009
 |       +-- ses-0001
 |           +-- sub-strokecase0009_ses-0001_msk.nii.gz
@@ -35,10 +35,10 @@ A single case-sample is structured as follows:
 
 ## Performance evaluation
 Metrics used in this challenge are found in utils/eval_utils.
-Dice Score 
-Absolute volume difference
-Absolute lesion count difference
-Lesion-wise F1-Score
+* Dice Score 
+* Absolute volume difference
+* Absolute lesion count difference
+* Lesion-wise F1-Score
 
 ## Getting started
 A Jupyter notebook is provided to get started with ISLES'22. The notebook will guide you through the data loading process and performance evaluation of a simple segmentation approach.

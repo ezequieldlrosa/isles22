@@ -14,7 +14,7 @@ You can access ISLES'22 data after registration to the [challenge](https://isles
 Data is organized following the Brain Imaging Data Structure (BIDS; https://bids.neuroimaging.io/) and contains 4 image files (ADC, DWI, FLAIR and ground-truth), 1 snapshot and (when available) accompanying .json files for the images.
 
 A single case-sample is structured as follows:
-
+```
 +-- _rawdata
 |   +-- sub-strokecase0009
 |       +-- ses-0001
@@ -29,7 +29,7 @@ A single case-sample is structured as follows:
 |       +-- ses-0001
 |           +-- sub-strokecase0009_ses-0001_msk.nii.gz
 |           +-- sub-strokecase0009_ses-0001_snp.png
-
+```
 
 ## Citing ISLES'22
 If you use ISLES'22, please cite the following paper:

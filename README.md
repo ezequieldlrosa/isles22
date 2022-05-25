@@ -1,4 +1,4 @@
-# Isles'22: Ischemic Stroke Lesion Segmentation Challenge
+# ISLES'22: Ischemic Stroke Lesion Segmentation Challenge
 
 ![alt text](https://github.com/ezequieldlrosa/isles22/blob/main/isles-logo.png)
 
@@ -12,7 +12,7 @@ From a clinical perspective, ISLES'22 focuses on the clinical growing interest o
 The goal of this challenge is to evaluate automated methods of stroke lesion segmentation in MR images. Participants are tasked with automatically generating lesion segmentation masks from DWI, ADC and FLAIR MR modalities. The task consist on a single phase of algorithms evaluation. Participants will submit their segmentation model ("algorithm") via a Docker container which will then be used to generate predictions on a hidden dataset.
 
 ## Data
-You can access ISLES'22 data after registration to the [challenge](https://isles22.grand-challenge.org/)
+You can access ISLES'22 data after registration to the [challenge](https://isles22.grand-challenge.org/).
 Data is organized following the Brain Imaging Data Structure (BIDS; https://bids.neuroimaging.io/) and contains 4 image files (ADC, DWI, FLAIR and ground-truth), 1 snapshot and (when available) accompanying .json files for the images.
 
 A single case-sample is structured as follows:
@@ -32,6 +32,16 @@ A single case-sample is structured as follows:
 |           +-- sub-strokecase0009_ses-0001_msk.nii.gz
 |           +-- sub-strokecase0009_ses-0001_snp.png
 ```
+
+## Performance evaluation
+Metrics used in this challenge are found in utils/eval_utils.
+Dice Score 
+Absolute volume difference
+Absolute lesion count difference
+Lesion-wise F1-Score
+
+## Getting started
+A Jupyter notebook is provided to get started with ISLES'22. The notebook will guide you through the data loading process and performance evaluation of a simple segmentation approach.
 
 ## Citing ISLES'22
 If you use ISLES'22, please cite the following paper:

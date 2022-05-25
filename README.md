@@ -9,6 +9,28 @@ From a clinical perspective, ISLES'22 focuses on the clinical growing interest o
 ## Challenge task
 The goal of this challenge is to evaluate automated methods of stroke lesion segmentation in MR images. Participants are tasked with automatically generating lesion segmentation masks from DWI, ADC and FLAIR MR modalities. The task consist on a single phase of algorithms evaluation. Participants will submit their segmentation model ("algorithm") via a Docker container which will then be used to generate predictions on a hidden dataset.
 
+## Data
+You can access ISLES'22 data after registration to the [challenge](https://isles22.grand-challenge.org/)
+Data is organized following the Brain Imaging Data Structure (BIDS; https://bids.neuroimaging.io/) and contains 4 image files (ADC, DWI, FLAIR and ground-truth), 1 snapshot and (when available) accompanying .json files for the images.
+
+A single case-sample is structured as follows:
+
++-- _rawdata
+|   +-- sub-strokecase0009
+|       +-- ses-0001
+|           +-- sub-strokecase0009_ses-0001_adc.nii.gz 
+|           +-- sub-strokecase0009_ses-0001_adc.json 
+|           +-- sub-strokecase0009_ses-0001_dwi.nii.gz
+|           +-- sub-strokecase0009_ses-0001_dw.json 
+|           +-- sub-strokecase0009_ses-0001_flair.nii.gz
+|           +-- sub-strokecase0009_ses-0001_flair.json
++-- _derivatives
+|   +-- sub-strokecase0009
+|       +-- ses-0001
+|           +-- sub-strokecase0009_ses-0001_msk.nii.gz
+|           +-- sub-strokecase0009_ses-0001_snp.png
+
+
 ## Citing ISLES'22
 If you use ISLES'22, please cite the following paper:
 - blablabla
@@ -19,4 +41,4 @@ The ISLES'22 dataset is provided under the CC BY-SA 4.0 License.
 The ISLES'22 repository is under the MIT License.
 
 ## Contact
-Please email ezequiel.delarosa@icometrix.com for questions not fitting in a github issue.
+Please email [Ezequiel de la Rosa](ezequiel.delarosa@icometrix.com) for questions not fitting in a Github issue.

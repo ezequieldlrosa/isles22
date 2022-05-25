@@ -1,5 +1,7 @@
 # Isles'22: Ischemic Stroke Lesion Segmentation Challenge
 
+![alt text](https://github.com/ezequieldlrosa/isles22/blob/main/isles-logo.png)
+
 ## Aims
 Infarct segmentation in ischemic stroke is crucial at i) acute stages to guide treatment decision making (whether to reperfuse or not, and type of treatment) and at ii) sub-acute and chronic stages to evaluate the patients' disease outcome, for their clinical follow-up and to define optimal therapeutical and rehabilitation strategies to maximize critical windows for recovery.
 This challenge task aims to benchmark infarct segmentation in acute and sub-acute stroke using multimodal MRI data, namely DWI, ADC and FLAIR images. ISLES'22 differs from the previous challenge editions in ischemic stroke by i) targeting the delineation of not only large infarct lesions, but also of multiple embolic and/or cortical infarcts (typically seen after mechanical recanalization), ii) by evaluating both pre- and post- interventional MRI images and iii) by including ~3x more data than ISLES'15 (a previous challenge edition with similar aims).

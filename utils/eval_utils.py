@@ -191,8 +191,7 @@ def compute_lesion_f1_score(ground_truth, prediction, empty_value=1.0, connectiv
     # Iterate over ground_truth clusters to find tp and fn.
     # tp and fn are only computed if the ground-truth is not empty.
     if N > 0:
-        for cluster_label in range(1, labeled_ground_truth.max() + 1):
-            binary_cluster_image = labeled_ground_truth == cluster_label
+        for _, binary_cluster_image in cc3d.each(labeled_ground_truth, binary=True, in_place=True):
             if np.logical_and(binary_cluster_image, intersection).any():
                 tp += 1
             else:
@@ -204,8 +203,7 @@ def compute_lesion_f1_score(ground_truth, prediction, empty_value=1.0, connectiv
         prediction, connectivity=connectivity, return_N=True
     )
     if N > 0:
-        for cluster_label in range(1, labeled_prediction.max() + 1):
-            binary_cluster_image = labeled_prediction == cluster_label
+        for _, binary_cluster_image in cc3d.each(labeled_prediction, binary=True, in_place=True):
             if not np.logical_and(binary_cluster_image, ground_truth).any():
                 fp += 1
 

@@ -34,11 +34,13 @@ A single case-sample is structured as follows:
 ```
 
 ## Performance evaluation
-Metrics used in this challenge are found in utils/eval_utils.
+Metrics used in this challenge are found in utils/eval_utils and are also used to rank the teams in the challenge:
 * Dice Score 
 * Absolute volume difference
 * Absolute lesion count difference
 * Lesion-wise F1-Score
+
+For information about the ranking computation, please check our [challenge documentation] (https://zenodo.org/record/6362388#.YpW-mJNBxQJ).
 
 ## Getting started
 A Jupyter notebook is provided to get started with ISLES'22. The notebook will guide you through the data loading process and performance evaluation of a simple segmentation approach.

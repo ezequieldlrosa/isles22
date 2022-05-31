@@ -43,7 +43,7 @@ Metrics used in this challenge are found in utils/eval_utils.
 ## Getting started
 A Jupyter notebook is provided to get started with ISLES'22. The notebook will guide you through the data loading process and performance evaluation of a simple segmentation approach.
 
-## Citing ISLES'22
+## Citation
 We are preparing a manuscript with detailed information about ISLES'22 dataset. This sections will be updated once the preprint is online.
 
 

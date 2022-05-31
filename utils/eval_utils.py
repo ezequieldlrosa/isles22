@@ -184,13 +184,13 @@ def compute_lesion_f1_score(ground_truth, prediction, empty_value=1.0, connectiv
 
     # Check if ground-truth connected-components are detected or missed (tp and fn respectively).
     intersection = np.logical_and(ground_truth, prediction)
-    labeled_ground_truth = cc3d.connected_components(
-        ground_truth, connectivity=connectivity
+    labeled_ground_truth, N = cc3d.connected_components(
+        ground_truth, connectivity=connectivity, return_N=True
     )
 
     # Iterate over ground_truth clusters to find tp and fn.
     # tp and fn are only computed if the ground-truth is not empty.
-    if labeled_ground_truth.max() > 0:
+    if N > 0:
         for cluster_label in range(1, labeled_ground_truth.max() + 1):
             binary_cluster_image = labeled_ground_truth == cluster_label
             if np.logical_and(binary_cluster_image, intersection).any():
@@ -200,10 +200,10 @@ def compute_lesion_f1_score(ground_truth, prediction, empty_value=1.0, connectiv
 
     # iterate over prediction clusters to find fp.
     # fp are only computed if the prediction image is not empty.
-    labeled_prediction = cc3d.connected_components(
-        prediction, connectivity=connectivity
+    labeled_prediction, N = cc3d.connected_components(
+        prediction, connectivity=connectivity, return_N=True
     )
-    if labeled_prediction.max() > 0:
+    if N > 0:
         for cluster_label in range(1, labeled_prediction.max() + 1):
             binary_cluster_image = labeled_prediction == cluster_label
             if not np.logical_and(binary_cluster_image, ground_truth).any():

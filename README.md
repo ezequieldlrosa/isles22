@@ -40,7 +40,7 @@ Metrics used in this challenge are found in utils/eval_utils and are also used t
 * Absolute lesion count difference
 * Lesion-wise F1-Score
 
-For information about the ranking computation, please check our [https://zenodo.org/record/6362388#.YpW-mJNBxQJ](challenge documentation).
+For information about the ranking computation, please check the challenge [document](https://zenodo.org/record/6362388#.YpW-mJNBxQJ).
 
 ## Getting started
 A Jupyter notebook is provided to get started with ISLES'22. The notebook will guide you through the data loading process and performance evaluation of a simple segmentation approach.

@@ -92,7 +92,7 @@ def compute_absolute_volume_difference(im1, im2, voxel_size):
     return abs_vol_diff
 
 
-def compute_absolute_lesion_difference(ground_truth, prediction):
+def compute_absolute_lesion_difference(ground_truth, prediction, connectivity=26):
     """
     Computes the absolute lesion difference between two masks. The number of lesions are counted for
     each volume, and their absolute difference is computed.
@@ -118,32 +118,11 @@ def compute_absolute_lesion_difference(ground_truth, prediction):
     ground_truth = np.asarray(ground_truth).astype(np.bool)
     prediction = np.asarray(prediction).astype(np.bool)
 
-    ground_truth_numb_lesion = compute_number_of_clusters(ground_truth)
-    prediction_numb_lesion = compute_number_of_clusters(prediction)
+    _, ground_truth_numb_lesion = cc3d.connected_components(ground_truth, connectivity=connectivity, return_N=True)
+    _, prediction_numb_lesion = cc3d.connected_components(prediction, connectivity=connectivity, return_N=True)
     abs_les_diff = abs(ground_truth_numb_lesion - prediction_numb_lesion)
 
     return abs_les_diff
-
-
-def compute_number_of_clusters(im, connectivity=26):
-    """
-    Computes the number of 3D clusters (connected-components) in the image.
-
-    Parameters
-    ----------
-    im : array-like, bool
-        Any array of arbitrary size. If not boolean, will be converted.
-    connectivity : scalar, int
-
-    Returns
-    -------
-    num_clusters : scalar, int
-    """
-
-    labeled_im = cc3d.connected_components(im, connectivity=connectivity)
-    num_clusters = labeled_im.max().astype("int16")
-
-    return num_clusters
 
 
 def compute_lesion_f1_score(ground_truth, prediction, empty_value=1.0, connectivity=26):
@@ -209,7 +188,8 @@ def compute_lesion_f1_score(ground_truth, prediction, empty_value=1.0, connectiv
 
     # Define case when both images are empty.
     if tp + fp + fn == 0:
-        if compute_number_of_clusters(ground_truth) == 0:
+        _, N = cc3d.connected_components(ground_truth, connectivity=connectivity, return_N=True)
+        if N == 0:
             f1_score = empty_value
     else:
         f1_score = tp / (tp + (fp + fn) / 2)

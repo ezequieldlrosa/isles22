@@ -46,7 +46,9 @@ For information about the ranking computation, please check the challenge [docum
 A Jupyter notebook is provided to get started with ISLES'22. The notebook will guide you through the data loading process and performance evaluation of a simple segmentation approach.
 
 ## Citation
-Please cite the following [manuscript](https://www.nature.com/articles/s41597-022-01875-5) when using ISLES'22 dataset:
+Please cite the followings works when using ISLES'22 dataset:
+
+de la Rosa, E., Reyes, M., Liew, S. L., Hutton, A., Wiest, R., Kaesmacher, J., ... & Wiestler, B. (2024). A Robust Ensemble Algorithm for Ischemic Stroke Lesion Segmentation: Generalizability and Clinical Utility Beyond the ISLES Challenge. arXiv preprint arXiv:2403.19425.
 
 Hernandez Petzsche, M. R., de la Rosa, E., Hanning, U., Wiest, R., Valenzuela, W., Reyes, M., ... & Kirschke, J. S. (2022). ISLES 2022: A multi-center magnetic resonance imaging stroke lesion segmentation dataset. Scientific data, 9(1), 762.
 
